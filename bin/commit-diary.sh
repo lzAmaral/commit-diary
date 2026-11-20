@@ -117,7 +117,7 @@ else
 fi
 
 # empurra qualquer commit pendente (inclusive de execuções offline anteriores)
-if ! git -C "$DIARY_DIR" push --quiet 2>/dev/null; then
+if ! git -C "$DIARY_DIR" push --quiet -u origin HEAD 2>/dev/null; then
   log "aviso: push falhou (sem rede?) — será reenviado na próxima execução"
 else
   log "push concluído"
